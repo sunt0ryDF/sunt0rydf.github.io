@@ -6,17 +6,24 @@
 
 body {
     font-family: 'Aptos', sans-serif;
-    background-color: #ffffff;
+    background-color: #000000;
     transition: background-color 0.3s ease;
-    color: #000000;
+    color: #ffffff;
 }
 
 .hamburger-menu {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1000;
+    z-index: 2001;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .hamburger-icon {
@@ -30,7 +37,7 @@ body {
     position: absolute;
     height: 3px;
     width: 100%;
-    background: black;
+    background: white;
     border-radius: 3px;
     transition: all 0.3s ease;
 }
@@ -54,10 +61,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(128, 128, 128, 0.95);
+    background-color: rgba(32, 32, 32, 0.98);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: 999;
+    z-index: 2000;
+    backdrop-filter: blur(8px);
 }
 
 .menu-overlay.active {
@@ -66,19 +74,116 @@ body {
 
 .menu-content {
     padding: 80px 40px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Aptos', sans-serif;
+}
+
+.menu-titles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.menu-header {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-family: 'Aptos', sans-serif;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.menu-header a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-header a:hover {
+    color: #888888;
+}
+
+.menu-subtitle {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Aptos', sans-serif;
+    margin-left: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-subtitle::before {
+    display: none;
+}
+
+.menu-subtitle:hover {
+    color: #888888;
+}
+
+.menu-content a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: block;
+    margin: 20px 0;
+    transition: color 0.3s ease;
+}
+
+.menu-content a:hover {
+    color: #888888;
 }
 
 .main-content {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 10%;
+    min-height: 100vh;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.main-page-content {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    gap: 2rem;
 }
 
 .title {
     font-size: 4rem;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.title:hover {
+    color: #888888;
+}
+
+.page-title {
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
 .zero {
@@ -93,7 +198,7 @@ body {
     top: 50%;
     width: 100%;
     height: 2px;
-    background-color: black;
+    background-color: white;
     transform: translateY(-50%);
 }
 
@@ -101,6 +206,7 @@ body {
 .hamburger-menu.active .hamburger-icon span:nth-child(1) {
     transform: rotate(45deg);
     top: 50%;
+    background: #ffffff;
 }
 
 .hamburger-menu.active .hamburger-icon span:nth-child(2) {
@@ -110,6 +216,7 @@ body {
 .hamburger-menu.active .hamburger-icon span:nth-child(3) {
     transform: rotate(-45deg);
     bottom: 50%;
+    background: #ffffff;
 }
 
 /* Responsive design */
@@ -123,4 +230,64 @@ body {
     .title {
         font-size: 2rem;
     }
+}
+
+.page-header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.page-header .title {
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 700;
+}
+
+.page-header .title:hover {
+    color: #888888;
+}
+
+.top-right-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.ale-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+}
+
+.menu-section .menu-header {
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.menu-section .menu-subtitle {
+    margin-left: 1rem;
+}
+
+.content-text {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.content-text p {
+    margin-bottom: 1rem;
 } 
