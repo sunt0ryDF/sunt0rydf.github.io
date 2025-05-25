@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Portal - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dashboard {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            color: white;
+            text-align: center;
+        }
+        
+        .welcome-message {
+            margin-bottom: 30px;
+        }
+        
+        .logout-btn {
+            background: #dc3545;
+            margin-top: 20px;
+        }
+        
+        .logout-btn:hover {
+            background: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <div class="welcome-message">
+                <h1>Welcome to GitHub Portal</h1>
+                <p>You have successfully logged in!</p>
+            </div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <script>
+        // Check if user is authenticated
+        function checkAuth() {
+            const isAuthenticated = localStorage.getItem('isAuthenticated');
+            if (isAuthenticated !== 'true') {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Handle logout
+        function logout() {
+            localStorage.removeItem('isAuthenticated');
+            window.location.href = 'index.html';
+        }
+
+        // Check authentication status when page loads
+        checkAuth();
+    </script>
+</body>
+</html> 
