@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Aptos', sans-serif;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    color: #000000;
+}
+
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 30px;
+    height: 24px;
+    position: relative;
+}
+
+.hamburger-icon span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: black;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-icon span:nth-child(3) {
+    bottom: 0;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.95);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.menu-overlay.active {
+    transform: translateX(0);
+}
+
+.menu-content {
+    padding: 80px 40px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.title {
+    font-size: 4rem;
+    color: #000000;
+    text-align: center;
+}
+
+.zero {
+    position: relative;
+    display: inline-block;
+}
+
+.zero::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transform: translateY(-50%);
+}
+
+/* Hamburger animation */
+.hamburger-menu.active .hamburger-icon span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 50%;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 50%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+} 
