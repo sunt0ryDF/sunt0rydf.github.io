@@ -9,9 +9,8 @@ function App() {
       <HamburgerMenu />
       <main className="content-container">
         <div className="image-wrapper">
-          <img src="/test.png" alt="Test" className="centered-image" />
+          <img src="/test.png" alt="Suntory" className="centered-image" />
         </div>
-        <h1 className="test-text">TEST</h1>
         <FilterButtons />
       </main>
     </div>

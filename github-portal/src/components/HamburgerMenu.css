@@ -75,14 +75,12 @@
 }
 
 .menu-header {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 1rem 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(1.5rem, 5vw, 2.5rem);
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: #ffffff;
-  text-align: center;
-  flex: 1;
+  transition: color 0.3s ease;
 }
 
 .menu-header:hover {
