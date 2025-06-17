@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './HamburgerMenu.css';
 
 interface HamburgerMenuProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
-const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ children }) => {
+const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -26,7 +26,11 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ children }) => {
       
       <div className={`menu-overlay ${isOpen ? 'open' : ''}`}>
         <div className="menu-content">
-          {children}
+          <div className="menu-headers">
+            <h2 className="menu-header">Account Progression</h2>
+            <h2 className="menu-header">About</h2>
+            <h2 className="menu-header">Guides</h2>
+          </div>
         </div>
       </div>
     </>
