@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './FilterButtons.css';
 
-const FilterButtons: React.FC = () => {
-  const [activeButton, setActiveButton] = useState<string>('All');
+interface FilterButtonsProps {
+  onFilterChange: (filter: string) => void;
+  activeFilter: string;
+}
 
-  const buttons = ['All', 'Collection Log', 'Achievements', 'Photos'];
+const FilterButtons: React.FC<FilterButtonsProps> = ({ onFilterChange, activeFilter }) => {
+  const filters = [
+    { id: 'all', label: 'All' },
+    { id: 'whisky', label: 'Whisky' },
+    { id: 'beer', label: 'Beer' },
+    { id: 'wine', label: 'Wine' },
+    { id: 'spirits', label: 'Spirits' }
+  ];
 
   return (
-    <div className="filter-buttons-container">
-      {buttons.map((button) => (
+    <div className="filter-buttons">
+      {filters.map(filter => (
         <button
-          key={button}
-          className={`filter-button ${activeButton === button ? 'active' : ''}`}
-          onClick={() => setActiveButton(button)}
+          key={filter.id}
+          className={`filter-button ${activeFilter === filter.id ? 'active' : ''}`}
+          onClick={() => onFilterChange(filter.id)}
         >
-          {button}
+          {filter.label}
         </button>
       ))}
     </div>

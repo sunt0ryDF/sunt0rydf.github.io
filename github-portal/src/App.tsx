@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import HamburgerMenu from './components/HamburgerMenu';
 import FilterButtons from './components/FilterButtons';
+import Showcase from './components/Showcase';
 
 function App() {
+  const [activeFilter, setActiveFilter] = useState('all');
+
   return (
     <div className="App">
       <HamburgerMenu />
@@ -11,7 +14,11 @@ function App() {
         <div className="image-wrapper">
           <img src="/Suntory_Logo.png" alt="Suntory" className="centered-image" />
         </div>
-        <FilterButtons />
+        <FilterButtons 
+          onFilterChange={setActiveFilter}
+          activeFilter={activeFilter}
+        />
+        <Showcase />
       </main>
     </div>
   );
