@@ -75,6 +75,7 @@
 }
 
 .menu-header {
+  font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 600;
   cursor: pointer;
