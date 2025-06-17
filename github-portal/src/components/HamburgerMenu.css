@@ -1,4 +1,4 @@
-.hamburger-button {
+.hamburger-menu {
   position: fixed;
   top: 20px;
   left: 20px;
@@ -6,34 +6,34 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50px;
-  height: 40px;
+  width: 40px;
+  height: 30px;
   transition: all 0.3s ease-in-out;
 }
 
 .hamburger-line {
   width: 100%;
-  height: 4px;
+  height: 3px;
   background-color: #ffffff;
   transition: all 0.3s ease-in-out;
-  border-radius: 2px;
+  transform-origin: center;
 }
 
-.hamburger-button.open .hamburger-line:nth-child(1) {
-  transform: translateY(18px) rotate(45deg);
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: translateY(13.5px) rotate(45deg);
 }
 
-.hamburger-button.open .hamburger-line:nth-child(2) {
+.hamburger-menu.active .hamburger-line:nth-child(2) {
   opacity: 0;
-  transform: translateX(-50px);
+  transform: scale(0);
 }
 
-.hamburger-button.open .hamburger-line:nth-child(3) {
-  transform: translateY(-18px) rotate(-45deg);
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: translateY(-13.5px) rotate(-45deg);
 }
 
 .menu-overlay {
@@ -51,7 +51,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.menu-overlay.open {
+.menu-overlay.active {
   opacity: 1;
   visibility: visible;
 }
