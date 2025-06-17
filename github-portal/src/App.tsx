@@ -9,7 +9,7 @@ function App() {
       <HamburgerMenu />
       <main className="content-container">
         <div className="image-wrapper">
-          <img src="/Suntory_Logo.png" alt="Suntory" className="centered-image" />
+          <img src="/test.png" alt="Suntory" className="centered-image" />
         </div>
         <FilterButtons />
       </main>
