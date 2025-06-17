@@ -26,10 +26,14 @@ fs.readdir(showcaseDir, (err, folders) => {
     // Add each image to the array with its category
     files.forEach(file => {
       if (/\.(jpg|jpeg|png|gif)$/i.test(file)) {
+        // Use the exact folder name as the category
+        const category = folder.toLowerCase();
+        console.log(`Processing image: ${file} in category: ${category}`); // Debug log
+        
         images.push({
           src: `/showcase/MAY2025/${folder}/${file}`,
           alt: file.split('.')[0].replace(/_/g, ' '),
-          category: folder.toLowerCase()
+          category: category
         });
       }
     });
@@ -48,5 +52,6 @@ fs.readdir(showcaseDir, (err, folders) => {
       return;
     }
     console.log('Successfully generated images.json');
+    console.log('Categories found:', [...new Set(images.map(img => img.category))]); // Debug log
   });
 }); 

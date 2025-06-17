@@ -21,6 +21,7 @@ const Showcase: React.FC<ShowcaseProps> = ({ activeFilter }) => {
       try {
         const response = await fetch('/showcase/images.json');
         const data = await response.json();
+        console.log('Loaded images:', data); // Debug log
         setImages(data);
       } catch (error) {
         console.error('Error loading images:', error);
@@ -30,9 +31,25 @@ const Showcase: React.FC<ShowcaseProps> = ({ activeFilter }) => {
     loadImages();
   }, []);
 
-  const filteredImages = images.filter(image => 
-    activeFilter === 'all' ? true : image.category === activeFilter
-  );
+  // Map filter IDs to folder names
+  const getCategoryFolder = (filter: string) => {
+    switch (filter) {
+      case 'collection':
+        return 'collection';
+      case 'achievements':
+        return 'achievements';
+      case 'photos':
+        return 'photos';
+      default:
+        return 'all';
+    }
+  };
+
+  const filteredImages = images.filter(image => {
+    const categoryFolder = getCategoryFolder(activeFilter);
+    console.log('Filtering:', { activeFilter, categoryFolder, imageCategory: image.category }); // Debug log
+    return categoryFolder === 'all' ? true : image.category === categoryFolder;
+  });
 
   const openLightbox = (image: Image) => {
     setSelectedImage(image);
