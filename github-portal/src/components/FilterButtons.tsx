@@ -9,10 +9,9 @@ interface FilterButtonsProps {
 const FilterButtons: React.FC<FilterButtonsProps> = ({ onFilterChange, activeFilter }) => {
   const filters = [
     { id: 'all', label: 'All' },
-    { id: 'whisky', label: 'Whisky' },
-    { id: 'beer', label: 'Beer' },
-    { id: 'wine', label: 'Wine' },
-    { id: 'spirits', label: 'Spirits' }
+    { id: 'collection', label: 'Collection Log' },
+    { id: 'achievements', label: 'Achievements' },
+    { id: 'photos', label: 'Photos' }
   ];
 
   return (
