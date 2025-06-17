@@ -47,7 +47,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
           color="#ffffff"
           rounded
           label="Show menu"
-          hideOutline={false}
+          hideOutline={true}
         />
       </div>
       
