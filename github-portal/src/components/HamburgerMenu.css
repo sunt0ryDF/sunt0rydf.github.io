@@ -3,7 +3,7 @@
   top: 20px;
   left: 20px;
   z-index: 1000;
-  background: none;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   cursor: pointer;
   padding: 15px;
@@ -13,6 +13,13 @@
   width: 40px;
   height: 30px;
   transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.hamburger-menu:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .hamburger-line {
@@ -21,6 +28,7 @@
   background-color: #ffffff;
   transition: all 0.3s ease-in-out;
   transform-origin: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .hamburger-menu.active .hamburger-line:nth-child(1) {
