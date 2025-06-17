@@ -1,24 +1,17 @@
-.hamburger-menu {
+.hamburger-container {
   position: fixed;
   top: 20px;
   left: 20px;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.1);
-  border: none;
-  cursor: pointer;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 40px;
-  height: 30px;
-  transition: all 0.3s ease-in-out;
+  padding: 8px;
   border-radius: 8px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease;
 }
 
-.hamburger-menu:hover {
+.hamburger-container:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 

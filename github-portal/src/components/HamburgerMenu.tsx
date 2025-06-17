@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Hamburger from 'hamburger-react';
 import './HamburgerMenu.css';
 
 interface HamburgerMenuProps {
@@ -8,11 +9,7 @@ interface HamburgerMenuProps {
 const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const buttonRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -42,17 +39,17 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = () => {
 
   return (
     <>
-      <button 
-        ref={buttonRef}
-        className={`hamburger-menu ${isOpen ? 'active' : ''}`}
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-        aria-expanded={isOpen}
-      >
-        <span className="hamburger-line"></span>
-        <span className="hamburger-line"></span>
-        <span className="hamburger-line"></span>
-      </button>
+      <div ref={buttonRef} className="hamburger-container">
+        <Hamburger
+          toggled={isOpen}
+          toggle={setIsOpen}
+          size={32}
+          color="#ffffff"
+          rounded
+          label="Show menu"
+          hideOutline={false}
+        />
+      </div>
       
       <div 
         ref={menuRef}
