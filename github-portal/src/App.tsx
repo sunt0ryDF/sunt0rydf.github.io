@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <HamburgerMenu />
-      <main className="content-container">
+      <div className="header-section">
         <div className="image-wrapper">
           <img src="/Suntory_Logo.png" alt="Suntory" className="centered-image" />
         </div>
@@ -18,8 +18,10 @@ function App() {
           onFilterChange={setActiveFilter}
           activeFilter={activeFilter}
         />
+      </div>
+      <div className="showcase-section">
         <Showcase activeFilter={activeFilter} />
-      </main>
+      </div>
     </div>
   );
 }
