@@ -19,8 +19,9 @@ body {
 
 .App {
     min-height: 100vh;
-    background-color: #000000;
-    color: white;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -448,7 +449,7 @@ section h2 {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #000000;
+    background-color: #1a1a1a;
     z-index: 100;
     padding: 2rem 1rem;
     display: flex;
@@ -458,7 +459,7 @@ section h2 {
 }
 
 .showcase-section {
-    margin-top: 300px; /* Adjust this value based on your header height */
+    margin-top: 300px;
     width: 100%;
     max-width: 1200px;
     margin-left: auto;
@@ -472,6 +473,6 @@ section h2 {
     }
 
     .showcase-section {
-        margin-top: 250px; /* Adjust for mobile */
+        margin-top: 250px;
     }
 }
