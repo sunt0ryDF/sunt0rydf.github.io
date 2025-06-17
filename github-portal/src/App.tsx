@@ -1,24 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HamburgerMenu from './components/HamburgerMenu';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HamburgerMenu>
+        <h2>Menu Content</h2>
+        <p>Add your menu items here</p>
+      </HamburgerMenu>
+      <img src="/test.png" alt="Test" className="centered-image" />
     </div>
   );
 }
