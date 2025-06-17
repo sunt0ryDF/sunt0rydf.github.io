@@ -476,3 +476,8 @@ section h2 {
         margin-top: 250px;
     }
 }
+
+html {
+    scrollbar-gutter: stable;
+    overflow-y: scroll;
+}
