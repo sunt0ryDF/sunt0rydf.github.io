@@ -18,7 +18,7 @@ function App() {
           onFilterChange={setActiveFilter}
           activeFilter={activeFilter}
         />
-        <Showcase />
+        <Showcase activeFilter={activeFilter} />
       </main>
     </div>
   );

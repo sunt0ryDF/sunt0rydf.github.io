@@ -7,10 +7,13 @@ interface Image {
   category: string;
 }
 
-const Showcase: React.FC = () => {
+interface ShowcaseProps {
+  activeFilter: string;
+}
+
+const Showcase: React.FC<ShowcaseProps> = ({ activeFilter }) => {
   const [images, setImages] = useState<Image[]>([]);
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
-  const [activeFilter, setActiveFilter] = useState<string>('all');
 
   useEffect(() => {
     // Load images from the showcase directory
